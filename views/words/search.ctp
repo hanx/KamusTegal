@@ -6,10 +6,8 @@
       <h2>Silakan berkontribusi.. :D</h2>
     </div>
     <div id="contact">
-      	  <label><h3>Goleti/Cari/Search :</h3></label>
     <?php
         echo $this->Form->create('Word', array('action' => 'search'));
-        echo $this->Form->input('keyword',array('id'=>'searchbox','label'=>false));
         $options = array(
                 'label' => 'Search!',
                 'name' => 'searchbutton',
@@ -17,28 +15,36 @@
                 'type' => 'submit',
         );
     ?>
-
-<table border="0">
-  <tr>
-    <td><input name="data[Word][in]" id="tegal" value="tegal" type="radio" checked=true > Tegal</td>
-    <td><input name="data[Word][in]" id="indonesia" value="indonesia" type="radio" > Indonesia</td>
-    <td><input name="data[Word][in]" id="inggris" value="inggris" type="radio" > English</td>
-  </tr>
-</table>
-
-
-    <?php
-        echo $this->Form->end($options);
-    ?>
+    <h3>Goleti/Cari/Search :</h3>
+    <table width="auto" border="0" cellspacing="0" cellpadding="3">
+      <tr>
+        <td colspan="5"><?php echo $this->Form->input('keyword',array('id'=>'searchbox','label'=>false)); ?></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td width="80" style="float: left"><input name="data[Word][searchin]" type="radio" id="tegal" value="Tegal" checked="checked" />
+            Tegal
+        </td>
+        <td width="100" style="float: left"><input type="radio" name="data[Word][searchin]" id="indonesia" value="Indonesia" />
+            Indonesia
+        </td>
+        <td style="float: left"><input type="radio" name="data[Word][searchin]" id="inggris" value="English" />
+            English
+        </td>
+        <td style="float: right">
+            <?php echo $this->Form->end($options); ?>
+        </td>
+      </tr>
+    </table>
     </div>
-   </div>
+</div>
 <?php
     if (!empty ($result)){
         echo $this->element('searchresult');
     } else if (!empty($keyword)){
 ?>
 <div class="section">
-    <h2>Search for '<?php echo $keyword; ?>'</h2>
+    <h2>Search for '<?php echo $keyword; ?>' in <?php echo $searchin; ?></h2>
     <div class="item">
       <div class="description">
           <h2>Not Found!</h2>

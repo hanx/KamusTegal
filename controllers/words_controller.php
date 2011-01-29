@@ -61,11 +61,24 @@ class WordsController extends AppController {
 
         function search(){
             if (!empty($this->data)){
+                //print_r($this->data);
                 $keyword = $this->data['Word']['keyword'];
-                $result = $this->Word->find('all',array('conditions'=>array('tegal LIKE'=>'%'.$keyword.'%')));
+                $searchin = $this->data['Word']['searchin'];
+                switch ($this->data['Word']['searchin']){
+                    case 'Tegal':
+                        $result = $this->Word->find('all',array('conditions'=>array('tegal LIKE'=>'%'.$keyword.'%')));
+                    break;
+                    case 'Indonesia':
+                        $result = $this->Word->find('all',array('conditions'=>array('indonesia LIKE'=>'%'.$keyword.'%')));
+                    break;
+                    case 'English':
+                        $result = $this->Word->find('all',array('conditions'=>array('inggris LIKE'=>'%'.$keyword.'%')));
+                    break;
+                }
+                //$result = $this->Word->find('all',array('conditions'=>array('tegal LIKE'=>'%'.$keyword.'%')));
                 //$this->redirect(array('controller'=>'pages'));
                 //$this->set('result',$result);
-                $this->set(compact('result','keyword'));
+                $this->set(compact('result','searchin','keyword'));
             }
         }
 }

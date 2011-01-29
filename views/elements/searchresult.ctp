@@ -1,5 +1,5 @@
 <div class="section">
-    <h2>Search Result for : <i>'<?php echo $keyword; ?>'</i></h2>
+    <h2>Search Result for : <i>'<?php echo $keyword; ?>' in <?php echo $searchin; ?></i></h2>
   <?php
   if (!empty ($result)){
       foreach ($result as $res){ ?>

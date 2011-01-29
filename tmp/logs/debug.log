@@ -8,3 +8,5 @@
 2011-01-21 16:58:03 Debug: Notice (8): Undefined variable: result in [C:\wamp\www\kamustegal\views\words\search.ctp, line 31]
 2011-01-21 16:58:03 Debug: Notice (8): Undefined variable: result in [C:\wamp\www\kamustegal\views\words\search.ctp, line 40]
 2011-01-21 16:58:04 Debug: Notice (8): Undefined variable: result in [C:\wamp\www\kamustegal\views\words\search.ctp, line 49]
+2011-01-29 10:15:29 Debug: Notice (8): Undefined property: Word::$Word in [C:\wamp\www\kamustegal\models\word.php, line 6]
+2011-01-29 10:15:58 Debug: Notice (8): Undefined property: Word::$Word in [C:\wamp\www\kamustegal\models\word.php, line 6]

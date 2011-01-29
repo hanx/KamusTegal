@@ -55,7 +55,7 @@
 		array('target' => '_blank', 'escape' => false)
 		)." CakePHP";
 	?><br/>
-        Develop by hanx
+        <small>Developed by hanx</small>
     </p>
     <!-- Don't remove this link. Respect the designer. If you want to remove it, shoot me an email me@jonnotie.nl -->
   </div>
